@@ -13,7 +13,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="admin/theloai/danhsach"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="admin/theloai/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> The Loai<span class="fa arrow"></span></a>
@@ -22,19 +22,43 @@
                                     <a href="admin/theloai/danhsach">Danh Sach The Loai</a>
                                 </li>
                                 <li>
-                                    <a href="#admin/theloai/them">Them The Loai</a>
+                                    <a href="admin/theloai/them">Them The Loai</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                            <a href="admin/loaitin/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Loai Tin<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List Product</a>
+                                    <a href="admin/loaitin/danhsach">Danh Sach Loai Tin</a>
                                 </li>
                                 <li>
-                                    <a href="#">Add Product</a>
+                                    <a href="admin/loaitin/them">Them Loai Tin</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i> Tin Tuc<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/tintuc/danhsach">Danh Sach Tin Tuc</a>
+                                </li>
+                                <li>
+                                    <a href="admin/tintuc/them">Them Tin Tuc</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cube fa-fw"></i> Slide <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/slide/danhsach">Danh Sach Slide</a>
+                                </li>
+                                <li>
+                                    <a href="admin/tintuc/them">Them slide</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

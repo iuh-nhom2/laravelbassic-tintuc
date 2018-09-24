@@ -6,46 +6,77 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Category
+                        <h1 class="page-header">Tin Tuc
                             <small>Add</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
-                        <form action="" method="POST">
+                        @if(count($errors) > 0)
+                            <div class="alert  alert-danger">
+                                    @foreach($errors->all() as $err)
+                                        {{$err}}<br>
+                                    @endforeach
+                            </div>
+                        @endif
+
+                        @if(session('thongbao'))
+                            <div class="alert alert-success">
+                                {{session('thongbao')}}
+                             </div>
+                        @endif
+                        <form action="admin/tintuc/them" method="POST"  enctype="multipart/form-data"
+                            >
+
+                           
+                            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <div class="form-group">
-                                <label>Category Parent</label>
-                                <select class="form-control">
-                                    <option value="0">Please Choose Category</option>
-                                    <option value="">Tin Tức</option>
+                                <label>The Loai</label>
+                                <select class="form-control" name="onTheLoai" id="TheLoai">
+                                    @foreach($theloai as $tl)
+
+                                        <option value="{{$tl->id}}">{{$tl->Ten}} </option>
+
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Category Name</label>
-                                <input class="form-control" name="txtCateName" placeholder="Please Enter Category Name" />
+                                <label>Loai Tin</label>
+                                <select class="form-control" name="onLoaiTin" id="LoaiTin">
+                                    @foreach($loaitin as $lt)
+
+                                        <option value="{{$lt->id}}">{{$lt->Ten}} </option>
+
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label>Category Order</label>
-                                <input class="form-control" name="txtOrder" placeholder="Please Enter Category Order" />
+                                <label>Tieu De:</label>
+                                <input class="form-control" name="txtTieuDe" placeholder="Please Enter Category Name" />
+                            </div>
+                           
+                            <div class="form-group">
+                                <label>Tom Tat</label>
+                                <textarea name="txtTomtat" id="demo" class="form-control ckeditor" rows="3"></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Category Keywords</label>
-                                <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
+                                <label>Noi Dung</label>
+                                <textarea name="txtNoiDung" id="demo" class="form-control ckeditor" rows="8"></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Category Description</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <label>Hinh:</label>
+                                <input type="file" name="Hinh" class="form-control"/>
                             </div>
                             <div class="form-group">
-                                <label>Category Status</label>
+                                <label>Nổi Bật</label>
                                 <label class="radio-inline">
-                                    <input name="rdoStatus" value="1" checked="" type="radio">Visible
+                                    <input name="rdoNoiBat" value="1" checked="" type="radio">Co
                                 </label>
                                 <label class="radio-inline">
-                                    <input name="rdoStatus" value="2" type="radio">Invisible
+                                    <input name="rdoNoiBat" value="2" type="radio">Khong
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-default">Category Add</button>
+                            <button type="submit" class="btn btn-default">News Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                         <form>
                     </div>
@@ -55,4 +86,37 @@
             <!-- /.container-fluid -->
         </div>
   
+@endsection
+
+@section('script')
+
+        <script>
+            $(document).ready(function(){
+                $("#TheLoai").change(function(){
+                    var idTheLoai = $(this).val();
+                    // alert(idTheLoai);
+                    $.get("admin/ajax/loaitin/"+idTheLoai, function(data){
+                            // alert(data);
+                            $("#LoaiTin").html(data);
+                    })
+                } );
+            });
+        </script>
+
+@endsection
+@section('script')
+
+        <script>
+            $(document).ready(function(){
+                $("#TheLoai").change(function(){
+                    var idTheLoai = $(this).val();
+                    // alert(idTheLoai);
+                    $.get("admin/ajax/loaitin/"+idTheLoai, function(data){
+                            // alert(data);
+                            $("#LoaiTin").html(data);
+                    })
+                } );
+            });
+        </script>
+
 @endsection

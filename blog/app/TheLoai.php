@@ -12,7 +12,7 @@ class TheLoai extends Model
         // hasmany 1->nhieu
         return $this->hasMany('App\LoaiTin','idTheLoai','id');
     }
-    // public function tintuc(){
-    //     return $this->hasmany('App\TinTuc','App\LoaiTin', 'idTheLoai','idLoaiTin', 'id');
-    // }
+    public function tintuc(){
+        return $this->hasManyThrough('App\TinTuc','App\LoaiTin', 'idTheLoai','idLoaiTin', 'id');
+    }
 }

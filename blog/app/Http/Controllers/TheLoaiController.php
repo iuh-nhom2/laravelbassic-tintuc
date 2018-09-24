@@ -51,7 +51,8 @@ class TheLoaiController extends Controller
     public function postThem(Request $request){
         // echo $request->txtTenTheLoai;
         $this->validate($request,[
-            'txtTenTheLoai' => 'required|min:3|max:100'
+            'txtTenTheLoai' => 'required|min:3|max:100',
+            
         ],
         [
             'txtTenTheLoai.required' => 'Ban chua nhap ten the loai',
@@ -78,7 +79,7 @@ class TheLoaiController extends Controller
         // exit;
         if(count($theloai->loaitin)>0 )
             return redirect('admin/theloai/danhsach')->with('thongbao','Khong the xoa du lieu');
-            else{
+         else{
                 $theloai ->delete();
                 return redirect('admin/theloai/danhsach')->with('thongbao','Da xoa thanh cong');
             }
