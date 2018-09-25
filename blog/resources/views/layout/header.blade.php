@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="trangchu">
 
                     Home
                 </a>
@@ -21,7 +21,7 @@
                         <a href="#">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="#">Liên hệ</a>
+                        <a href="lienhe">Liên hệ</a>
                     </li>
                 </ul>
 
@@ -33,23 +33,27 @@
 			    </form>
 
 			    <ul class="nav navbar-nav pull-right">
-                    <li>
-                        <a href="#">Đăng ký</a>
-                    </li>
-                    <li>
-                        <a href="#">Đăng nhập</a>
-                    </li>
+                  
+                   
+                 
                     <li>
                     	<a>
                     		<span class ="glyphicon glyphicon-user"></span>
                     		
                     	</a>
                     </li>
-
+                    
                     <li>
-                    	<a href="#">Đăng xuất</a>
+                    	<a href="dangxuat">Đăng xuất</a>
                     </li>
                     
+                    <li>
+                        <a href="#">Đăng ký</a>
+                    </li>
+                    <li>
+                        <a href="dangnhap">Đăng nhập</a>
+                    </li>
+                 
                 </ul>
             </div>
 
